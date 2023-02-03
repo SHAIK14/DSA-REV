@@ -1,0 +1,12 @@
+class Solution {
+    public boolean checkIfPangram(String sentence) { 
+        Set <Character> seen = new HashSet <>() ;
+
+        for(char currchar : sentence.toCharArray()){
+            seen.add(currchar) ;
+        }
+        
+    
+        return seen.size() >= 26;
+    }
+}
