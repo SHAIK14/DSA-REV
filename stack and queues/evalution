@@ -1,0 +1,48 @@
+//{ Driver Code Startsriver Code Ends
+
+
+class Solution
+{
+    //Function to evaluate a postfix expression.
+    public static int evaluatePostFix(String S){
+        
+         Stack <Integer> st = new Stack<>();
+         
+        for (char c : S.toCharArray()){
+            
+            
+            
+            if (Character.isDigit(c)){
+                st.push(c - '0');
+            }
+            
+            else {
+                
+                int x = st.pop();
+                int y = st.pop();
+                
+                if (c  == '*' ){
+                    st.push(x * y);
+                }
+                else if (c == '+' ){
+                    
+                    st.push (x + y);
+                }
+                else if (c == '-' )
+                {
+                    
+                    st.push (x - y);
+                } 
+                else if (c == '%')
+                
+                {
+                    st.push (x  % y);
+                }
+            }
+            
+            
+            
+        }
+        return st.pop() ;
+    }
+}
